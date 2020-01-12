@@ -82,19 +82,22 @@ public class NewVoucherFrame extends javax.swing.JInternalFrame {
         jLabel1.setText("New Voucher Code:");
 
         jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+//        jButton1.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                jButton1ActionPerformed(evt);
+//            }
+//        });
+        jButton1.addActionListener(event -> jButton1ActionPerformed(event));
 
+        
         jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
+//        jButton2.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                jButton2ActionPerformed(evt);
+//            }
+//        });
+        jButton2.addActionListener(event -> jButton2ActionPerformed(event));
+        
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -116,11 +119,13 @@ public class NewVoucherFrame extends javax.swing.JInternalFrame {
         jLabel8.setText("Date of purchase:");
 
         jCheckBox1.setText("tick for yes");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
+        
+//        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                jCheckBox1ActionPerformed(evt);
+//            }
+//        });
+        jCheckBox1.addActionListener(event -> jCheckBox1ActionPerformed(event));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
