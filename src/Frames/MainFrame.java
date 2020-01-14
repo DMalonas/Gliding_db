@@ -34,17 +34,27 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem10 = new javax.swing.JMenuItem();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+
+        jMenuItem10.setText("jMenuItem10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Gliding Business");
@@ -86,15 +96,17 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
-        jMenuItem1.setText("Redeem voucher");
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Search");
-        jMenu1.add(jMenuItem2);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Instructor");
+
+        jMenuItem6.setText("Redeem voucher");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
 
         jMenuItem4.setText("Complete voucher");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +117,62 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Manage vouchers");
+
+        jMenuItem11.setText("Edit voucher");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem11);
+
+        jMenuItem9.setText("Delete voucher");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem9);
+
+        jMenuItem8.setText("Print certificate");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Search");
+
+        jMenuItem1.setText("View all");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem1);
+
+        jMenuItem2.setText("Search by voucher code");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem2);
+
+        jMenuItem7.setText("Filter vouchers by club");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu3.setText("Exit");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +210,10 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        CompleteVoucherFrame completeVoucherFrame = new CompleteVoucherFrame();
+        jDesktopPane1.add(completeVoucherFrame);
+        completeVoucherFrame.setVisible(true);
+        completeVoucherFrame.setUI(null);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
@@ -161,12 +232,61 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        NewVoucherFrame nvf = new NewVoucherFrame();
-        jDesktopPane1.add(nvf);
-        nvf.setVisible(true);
-        nvf.setUI(null);
+        
+        NewVoucherFrame newVoucherFrame = new NewVoucherFrame();
+        jDesktopPane1.add(newVoucherFrame);
+        newVoucherFrame.setVisible(true);
+        newVoucherFrame.setUI(null);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        RedeemVoucherFrame redeemVoucherFrame = new RedeemVoucherFrame();
+        jDesktopPane1.add(redeemVoucherFrame);
+        redeemVoucherFrame.setVisible(true);
+        redeemVoucherFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        DeleteVoucherFrame deleteVoucherFrame = new DeleteVoucherFrame();
+        jDesktopPane1.add(deleteVoucherFrame);
+        deleteVoucherFrame.setVisible(true);
+        deleteVoucherFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        ViewAllVouchersFrame viewAllVouchersFrame = new ViewAllVouchersFrame();
+        jDesktopPane1.add(viewAllVouchersFrame);
+        viewAllVouchersFrame.setVisible(true);
+        viewAllVouchersFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        FilterByClubFrame filterByClubFrame = new FilterByClubFrame();
+        jDesktopPane1.add(filterByClubFrame);
+        filterByClubFrame.setVisible(true);
+        filterByClubFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        SearchByCodeFrame searchByCodeFrame = new SearchByCodeFrame();
+        jDesktopPane1.add(searchByCodeFrame);
+        searchByCodeFrame.setVisible(true);
+        searchByCodeFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        PrintCertificateFrame printCertificateFrame = new PrintCertificateFrame();
+        jDesktopPane1.add(printCertificateFrame);
+        printCertificateFrame.setVisible(true);
+        printCertificateFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        EditVoucherFrame editVoucherFrame = new EditVoucherFrame();
+        jDesktopPane1.add(editVoucherFrame);
+        editVoucherFrame.setVisible(true);
+        editVoucherFrame.setUI(null);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     
 
@@ -176,11 +296,19 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }

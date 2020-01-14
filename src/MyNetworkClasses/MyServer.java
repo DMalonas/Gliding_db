@@ -20,7 +20,7 @@ public class MyServer
     
     private void connectToClients()
     {
-        System.out.println("Server: Server starting.");
+        System.out.println("Server: Server starting.\n\n");
 
         try (ServerSocket serverSocket = new ServerSocket(2222)) {
             

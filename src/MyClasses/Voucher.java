@@ -15,17 +15,19 @@ import javax.swing.JOptionPane;
  *
  * @author dmalonas
  */
-public class Voucher implements Serializable
+public abstract class Voucher implements Serializable
 {
-    private String voucherCode;
-    private String purchaserName;
-    private boolean gift;
-    private String recipientName;
-    private String deliveryAddress;
-    private String emailAddress;
-    private String purchaseDate;
+    protected String voucherCode;
+    protected String purchaserName;
+    protected boolean gift;
+    protected String recipientName;
+    protected String deliveryAddress;
+    protected String emailAddress;
+    protected String purchaseDate;
+    protected boolean redeemed;
+    protected boolean completed;
     
-    public Voucher(String voucherCode, String purchaserName, boolean gift, String recipientName, String deliveryAddress,String emailAddress,String purchaseDate)
+    public Voucher(String voucherCode, String purchaserName, boolean gift, String recipientName, String deliveryAddress, String emailAddress, String purchaseDate)
     {
         this.voucherCode = voucherCode;
         this.purchaserName = purchaserName;
@@ -34,36 +36,97 @@ public class Voucher implements Serializable
         this.deliveryAddress = deliveryAddress;
         this.emailAddress = emailAddress;
         this.purchaseDate = purchaseDate;
+        this.redeemed = false;
+        this.completed = false;
     }
     
-    public int insertToDB(Connection con)
+    public void setVoucherCode(String voucherCode)
     {
-        Statement st = null;
-        try
-        {
-            // Connection to DB
-            con = (com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/glidingdb","root","");
-            st = con.createStatement();
-            // Insert voucher data
-            int giftBoolToInt = 0; // We use this technique to insert to DB 1/0 insteaf true/false
-            if (gift)
-                giftBoolToInt = 1;
-            String insertStatement = "INSERT INTO `vouchers` (`CODE`, `CUSTOMER_NAME`, `CUSTOMER_EMAIL_ADDRESS`, `PURCHASE_DATE`, `GIFT`, `GIFT_RECIPIENT_NAME`, `REDEEMED`, `FLIGHT_DATE`, `FLIGHT_TYPE`, `COMPLETED`, `FLIGHT_DURATION`, `GLIDER_NUMBER`, `GLIDING_INSTRUCTOR`) "
-                    + "VALUES ('" + voucherCode + "', '" + purchaserName + "', '" + emailAddress + "', '" + purchaseDate + "', '" + giftBoolToInt + "', '" + recipientName + "', '0', NULL, NULL, '0', NULL, NULL, NULL)";
-            
-            st.executeUpdate(insertStatement);
-            st.close();
-            return 1;
-        }
-        catch (Exception e)
-        {
-            // Show error message
-            JOptionPane.showMessageDialog(null, "Something went wrong with the voucher creation.", "DB Error", JOptionPane.ERROR_MESSAGE);
-            return -1;
-        }
-        
+        this.voucherCode = voucherCode;
     }
     
-
+    public String getVoucherCode()
+    {
+        return this.voucherCode;
+    }
     
+    public void setPurchaserName(String purchaserName)
+    {
+        this.purchaserName = purchaserName;
+    }
+    
+    public String getPurchaserName()
+    {
+        return this.purchaserName;
+    }
+    
+    public void setGift(boolean gift)
+    {
+        this.gift = gift;
+    }
+    
+    public boolean getGift()
+    {
+        return this.gift;
+    }
+    
+    public void setRecipientName(String recipientName)
+    {
+        this.recipientName = recipientName;
+    }
+    
+    public String getRecipientName()
+    {
+        return this.recipientName;
+    }
+    
+    public void setDeliveryAddress(String deliveryAddress)
+    {
+        this.deliveryAddress = deliveryAddress;
+    }
+    
+    public String getDeliveryAddress()
+    {
+        return this.deliveryAddress;
+    }
+    
+    public void setEmailAddress(String emailAddress)
+    {
+        this.emailAddress = emailAddress;
+    }
+    
+    public String getEmailAddress()
+    {
+        return this.emailAddress;
+    }
+    
+    public void setPurchaseDate(String purchaseDate)
+    {
+        this.purchaseDate = purchaseDate;
+    }
+    
+    public String getPurchaseDate()
+    {
+        return this.purchaseDate;
+    }
+    
+    public void setRedeemed(boolean redeemed)
+    {
+        this.redeemed = redeemed;
+    }
+    
+    public boolean getRedeemed()
+    {
+        return this.redeemed;
+    }
+    
+    public void setCompleted(boolean completed)
+    {
+        this.completed = completed;
+    }
+    
+    public boolean getCompleted()
+    {
+        return this.completed;
+    }
 }
